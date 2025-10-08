@@ -1,0 +1,183 @@
+* {
+    /* Basic settings for the entire page */
+    margin: 0;
+    /* Removes default browser margins */
+    padding: 0;
+    /* Removes default browser padding */
+    box-sizing: border-box;
+    /* Ensures padding and borders don't increase element width; helps with responsiveness across different screens. */
+}
+
+/* Grid is used for the main layout (text + image), Flexbox — for navigation.
+   Media queries handle three screen sizes. */
+body {
+    background-image: url('../images/portfolio.jpg');
+    background-size: cover;
+    /* Image covers the entire screen */
+    background-repeat: no-repeat;
+    /* Prevents image repetition */
+    background-attachment: fixed;
+    /* Background stays fixed and doesn't scroll with the text */
+    margin: 0;
+    /* Removes page margins */
+    min-height: 100vh;
+    /* Ensures content isn't cut off */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: #0d4675;
+}
+
+main {
+    max-width: 700px;
+    /* Limits width for better text readability */
+    margin: 0 auto;
+    /* Centers all content on the page */
+}
+
+.navigation {
+    display: flex;
+    /* Arranges items horizontally */
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    /* Wraps items to a new line when the screen gets narrower */
+    justify-content: left;
+    /* Keeps navigation aligned to the left */
+}
+
+.navigation a {
+    color: rgb(70, 20, 117);
+    font-weight: bold;
+    padding: 5px 15px;
+    /* Adds space around the text */
+}
+
+.navigation a:hover {
+    background-color: #2089e0;
+    /* Background color on hover */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* One column */
+    gap: 30px;
+    /* Space between each project */
+    list-style: none;
+    /* Removes bullet points from the list */
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Space between text and image */
+    padding: 20px;
+    text-align: center;
+    /* Centers all content inside */
+    align-items: center;
+    /* Centers items horizontally */
+}
+
+.project a {
+    color: rgb(62, 28, 96);
+    font-weight: bolder;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.project .img {
+    width: 200px;
+    flex-shrink: 0;
+    /* Prevents the image from shrinking */
+}
+
+.project .img img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 375px) {
+    body {
+        padding: 10px;
+        /* Smaller side margins */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .navigation {
+        gap: 10px;
+        /* Less space between links */
+    }
+
+    .project {
+        padding: 15px;
+        /* Less padding inside the container */
+    }
+
+    .project .img {
+        width: 100%;
+        /* Image takes full width */
+        max-width: 100px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .project {
+        padding: 15px;
+    }
+
+    .project .img {
+        width: 120px;
+    }
+
+    ul {
+        grid-template-columns: 1fr 1fr;
+        /* Two columns for projects */
+    }
+}
+
+
+@media (min-width: 1024px) {
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .navigation {
+        gap: 80px;
+    }
+
+    .project {
+        padding: 30px;
+    }
+
+    .project .img {
+        width: 200px;
+        /* Large image */
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        /* Space between cont.*/
+    }
+}

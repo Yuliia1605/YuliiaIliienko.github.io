@@ -1,0 +1,158 @@
+* {
+  /* Basic settings for the entire page */
+  margin: 0;
+  /* Removes default browser margins */
+  padding: 0;
+  /* Removes default browser padding */
+  box-sizing: border-box;
+  /* Ensures padding and borders don't increase element width; helps with responsiveness across different screens. */
+}
+
+/* Grid is used for the main layout (text + image), Flexbox — for navigation.
+   Media queries handle three screen sizes. */
+
+body {
+
+  margin: 0;
+  /* Removes margins around the page */
+  min-height: 100vh;
+  /* Ensures content isn't cut off anywhere */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #02033b;
+  background-color: rgb(228, 237, 244);
+}
+
+.navigation {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  /* Wraps items to a new line when the screen gets narrower */
+}
+
+.navigation a {
+  color: rgb(70, 20, 117);
+  font-weight: bold;
+  padding: 5px 15px;
+  /* Adds space around the text */
+}
+
+.navigation a:hover {
+  background-color: #2089e0;
+  /* Background color on hover */
+
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #022549;
+  font-size: 2em;
+}
+
+.info {
+  display: flex;
+  /* Flexbox — to arrange items horizontally inside the container */
+  flex-direction: column;
+  /* So the heading comes first, then the image and text */
+  gap: 10px;
+  /* Space between image and text inside this container */
+  padding: 20px;
+  margin-bottom: 20px;
+
+}
+
+.info h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+
+}
+
+.info .content {
+  display: flex;
+  align-items: stretch;
+  /* Makes all items the same height */
+  gap: 60px;
+}
+
+.info .img {
+  width: 190px;
+  flex-shrink: 0;
+  /* Prevents the image from shrinking */
+}
+
+.info .img img {
+  width: 100%;
+  height: auto;
+  /* Takes full height of the container */
+  object-position: center;
+  object-fit: cover;
+  /* Crops without distorting the image */
+  display: block;
+}
+
+.info .text {
+  flex: 1;
+  /* Takes all available width */
+  display: grid;
+}
+
+.info .text p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.basic {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.basic h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: solid;
+}
+
+.basic p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .info .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .info .img {
+    justify-self: center;
+    /* Image will be centered in the grid */
+    width: 120px;
+    height: auto;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  .info .img {
+    width: 140px;
+  }
+}
+
+@media (min-width: 769px) {
+  .info .img
+
+  /* As it was originally */
+    {
+    width: 190px;
+  }
+}
